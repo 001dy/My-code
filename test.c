@@ -1,48 +1,37 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include "LinkeList.h"
+#include "DoubleLink.h"
 
 int main()
 {
-	LinkedList L=InitList();
+	DLinklist L = InitDNode();
 	int i;
-	do{
+	do
+	{
 		Menu();
-		printf("请选择操作:>");
 		scanf("%d", &i);
 		switch (i)
 		{
 		case 1:
-			Insert(L);
+			InsertNextDNode(L);
 			break;
 		case 2:
-			InsertNextNode(L);
+			DeleteDNode(L);
 			break;
 		case 3:
-			InsertPriorNode(L);
+			SearchDNode(L);
 			break;
 		case 4:
-			DeleteList(L);
+			ModifyDNode(L);
 			break;
 		case 5:
-			GetElem(L);
-			break;
-		case 6:
-			LocateElem(L);
-			break;
-		case 7:
-			ModifyElem(L);
-			break;
-		case 8:
-			My_printf(L);
+			My_Printf(L);
 			break;
 		case 0:
-			printf("退出程序\n");
+			printf("退出程序！\n");
 			break;
 		default:
-			printf("选择操作不存在！！！\n");
+			printf("选择不合法！\n");
 			break;
 		}
-
 	} while (i);
 	return 0;
 }
