@@ -1,8 +1,8 @@
-#include "DoubleLink.h"
+#include "CycleLink.h"
 
 int main()
 {
-	DLinklist L = InitDNode();
+	CLinklist L = InitCLink();
 	int i;
 	do
 	{
@@ -11,19 +11,19 @@ int main()
 		switch (i)
 		{
 		case 1:
-			InsertNextDNode(L);
+			InsertCLink(L);
 			break;
 		case 2:
-			DeleteDNode(L);
+			DeleteCLink(L);
 			break;
 		case 3:
-			SearchDNode(L);
+			ModifyCLink(L);
 			break;
 		case 4:
-			ModifyDNode(L);
+			SerachCLink(L);
 			break;
 		case 5:
-			My_Printf(L);
+			My_printf(L);
 			break;
 		case 0:
 			printf("ÍË³ö³ÌÐò£¡\n");
