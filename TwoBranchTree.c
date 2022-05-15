@@ -1,5 +1,5 @@
 #include"TwoBranchTree.h"
-
+#include"LinkQueueHelp.h"
 //前序遍历创建树
 BiTNode* GreatTree()
 {
@@ -55,4 +55,29 @@ void PostOrder(BiTNode* T)
 		PreOrder(T->rchild);
 		visit(T);
 	}
+}
+
+//层次遍历
+/*算法思想：
+①初始化一个辅助队列
+②根节点入队
+③若非队列为空，则对头结点出队，访问该结点，并将其左、右孩子插入队尾(如果有的话)
+④重复③直至队列为空
+*/
+void LevelOrder(BiTNode* T)
+{
+	LinkQueue*Q = (LinkQueue*)malloc(sizeof(LinkQueue));
+	InitLQ(Q);
+	BiTNode* P = (BiTNode*)malloc(sizeof(BiTNode));
+	PushLQ(Q, T);
+	while (IsEmpty(Q))
+	{
+		PopLQ(Q, P);
+		visit(P);
+		if (P->lchild != NULL)
+			PushLQ(Q, P->lchild);
+		if (P->rchild != NULL)
+			PushLQ(Q, P->rchild);
+	}
+
 }
