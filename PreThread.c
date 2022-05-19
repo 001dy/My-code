@@ -65,10 +65,38 @@ PreThread* NextNode(PreThread*p)
 void PreOrder(PreThread*T)
 {
 	PreThread*q;
-	for (q = T; q; q = NextNode(q))
+	for (q = T; q; pre=q,q = NextNode(q))
 	{
-		printf("%d", q->data);
+		printf("%d",q->data);
 	}
 }
 
+//先序线索化找前驱判断
+int visit(PreThread*q,PreThread*p)
+{
+	if (q == p && pre == NULL)
+		return 2;
+	else if (q == p)
+		return 1;
+	else
+		return 0;
+}
+
+
+//二叉树先序线索找指定结点前驱动
+PreThread* FrontNode(PreThread*p, PreThread*T)
+{
+	assert(p);
+	if (p->ltag == 1)
+		return p->lchild;
+	PreThread*q;
+	for (q = T; q; pre = q, q = NextNode(q))
+	{
+		int d = visit(q, p);
+		if (d == 2)
+			return NULL;
+		else if (d == 1)
+			return pre;
+	}
+}
 
