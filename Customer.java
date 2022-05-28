@@ -1,32 +1,65 @@
-package java1;
+package Bean;
 
 /**
- * @author Dy1022
- * @create2022/5/26
+ * @author:Dy1022
+ * @create:2022/5/2813:40
+ * @Description:Customer为实体对象，封装客户信息
  */
 public class Customer {
-    private String firstName;
-    private String lastName;
-    private Account account;
+    private String name;
+    private int age;
+    private char gender;
+    private String phone;
+    private String email;
 
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer() {
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Customer(String name, int age, char gender, String phone, String email) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getName() {
+        return name;
     }
 
-    public Account getAccount() {
-        return account;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
