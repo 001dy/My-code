@@ -1,50 +1,63 @@
-package exer3;
+package domain;
 
-public abstract class Employee {
-	private String name;
-	private int number;
-	private MyDate birthday;
-	
-	
+/**
+ * @author:Dy1022
+ * @create:2022/6/514:20
+ * @Description:员工属性
+ */
+public class Employee {
+    private int id;
+    private String name;
+    private int age;
+    private double salary;
 
-	public Employee(String name, int number, MyDate birthday) {
-		super();
-		this.name = name;
-		this.number = number;
-		this.birthday = birthday;
-	}
+    public Employee() {
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Employee(int id, String name, int age, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
 
-	public int getNumber() {
-		return number;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public MyDate getBirthday() {
-		return birthday;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setBirthday(MyDate birthday) {
-		this.birthday = birthday;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public abstract double earnings();
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	@Override
-	public String toString() {
-		return "name=" + name + ", number=" + number + ", birthday=" + birthday.toDateString() ;
-	}
-	
-	
+    public double getSalary() {
+        return salary;
+    }
 
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    public String getDetails() {
+        return id + " \t" + name + " \t\t" + age + " \t" + salary;
+    }
+
+    @Override
+    public String toString() {
+        return getDetails();
+    }
 }
